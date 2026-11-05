@@ -1,0 +1,17 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "dev-loop",
+  "owner": {
+    "name": "Isaac Bacon",
+    "email": "bakonblitzgithub@gmail.com"
+  },
+  "description": "The dev-loop plugin: a planning-first coding workflow for Claude Code.",
+  "plugins": [
+    {
+      "name": "dev-loop",
+      "description": "architect (idea → design → proven plan → build → verify), ouroboros (adversarial planning loop with an independent verifier), handoff (park out-of-scope finds as plans), git-conflict (resolve conflicts by intent).",
+      "category": "workflow",
+      "source": "./"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# Blocks a commit that breaks the skill rules (scripts/skill.py lint over this plugin) or that
+# carries file damage from an edit over a network share (.githooks/commit-guard.py).
+# On per clone, once: git config core.hooksPath .githooks
+root=$(git rev-parse --show-toplevel)
+if ! bash "$root/scripts/py.sh" "$root/scripts/skill.py" lint "$root"; then
+  echo "pre-commit: the skill lint failed (above). Fix it before committing." >&2
+  exit 1
+fi
+if ! bash "$root/scripts/py.sh" "$root/.githooks/commit-guard.py" "$root"; then
+  echo "pre-commit: staged files are damaged (above). Fix them before committing." >&2
+  exit 1
+fi
