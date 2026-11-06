@@ -35,8 +35,10 @@ planning. Say which step you skip and why; never skip silently.
 7. **Verify — `superpowers:verification-before-completion`.** Run the real checks and show evidence;
    a green typecheck is not a verdict. An acceptance test is written by whoever owns the rule, never by
    the worker that implements it.
-8. **Finish — `superpowers:finishing-a-development-branch`.** Show the options menu. Push, merge and
-   PR creation are the user's call: do them only when asked.
+8. **Finish — `superpowers:finishing-a-development-branch`.** Show the options menu. Who runs push,
+   merge and PR creation follows the user's git rule in their CLAUDE.md or memory (for example:
+   personal projects, the agent merges and pushes; paid work projects, the user runs the git). With
+   no rule on file, do them only when asked.
 
 ## Rules
 
@@ -50,6 +52,6 @@ planning. Say which step you skip and why; never skip silently.
   attempt returns a mechanical diagnosis, not a verdict.
 - **Superpowers vs this skill.** The settled points: the user's CLAUDE.md outranks any skill;
   design/plan artifacts go to the plans folder, not the repo; one approval gate; test-first for
-  non-trivial logic, trivial one-liners exempt; creating a worktree needs no asking; finishing never
-  pushes unasked. If a superpowers instruction conflicts with this skill in a way not listed here,
+  non-trivial logic, trivial one-liners exempt; creating a worktree needs no asking; finishing pushes
+  only where the user's git rule allows it. If a superpowers instruction conflicts with this skill in a way not listed here,
   **stop and bring it to the user**; do not pick a side silently.
